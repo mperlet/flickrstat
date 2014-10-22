@@ -57,7 +57,7 @@ VIE=$(echo "Views........"  $VIE)
 COU=$(echo "sum(Images).."  $COU)
 
 # Add Image
-convert -size 350x84 xc:whitesmoke -font Courier-Bold -pointsize 14 -fill black -draw "text 5,14 'Flickr stats for : $(echo $FUSER)'" -draw "text 5,38 '$(echo $VIE)'" -draw "text 5,52 '$(echo $FAV)'" -draw "text 5,66 '$(echo $COM)'" -draw "text 5,80 '$(echo $COU)'"  $FUSER.png
+convert -size 3500x840 xc:whitesmoke -font Courier-Bold -pointsize 140 -fill black -draw "text 5,140 'Flickr stats for : $(echo $FUSER)'" -draw "text 5,380 '$(echo $VIE)'" -draw "text 5,520 '$(echo $FAV)'" -draw "text 5,660 '$(echo $COM)'" -draw "text 5,800 '$(echo $COU)'"  $FUSER.png
 
 # Twitter if something new
 if [ -n "$DMSG" ]; then
