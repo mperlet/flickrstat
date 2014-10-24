@@ -31,15 +31,15 @@ DCOU=$(($COU-$TCOU))
 
 DMSG=""
 if [ $DFAV -ne "0" ]; then
-   DMSG="$DFAV Favs"
+   DMSG="Fav: $DFAV "
 fi
 
 if [ $DCOM -ne "0" ]; then
-   DMSG="$DMSG $DCOM Comments"
+   DMSG="$DMSG Comm: $DCOM "
 fi
 
 if [ $DVIE -ne "0" ]; then
-   DMSG="$DMSG $DVIE Views"
+   DMSG="$DMSG Views: $DVIE "
 fi
 
 
@@ -57,11 +57,11 @@ VIE=$(echo "Views........"  $VIE)
 COU=$(echo "sum(Images).."  $COU)
 
 # Add Image
-convert -size 3500x840 xc:whitesmoke -font Courier-Bold -pointsize 140 -fill black -draw "text 5,140 'Flickr stats for : $(echo $FUSER)'" -draw "text 5,380 '$(echo $VIE)'" -draw "text 5,520 '$(echo $FAV)'" -draw "text 5,660 '$(echo $COM)'" -draw "text 5,800 '$(echo $COU)'"  $FUSER.png
+convert -size 2000x840 xc:whitesmoke -font Courier-Bold -pointsize 140 -fill black -draw "text 5,140 '$(echo $FUSER)@flickr'" -draw "text 5,380 '$(echo $VIE)'" -draw "text 5,520 '$(echo $FAV)'" -draw "text 5,660 '$(echo $COM)'" -draw "text 5,800 '$(echo $COU)'"  $FUSER.png
 
 # Twitter if something new
 if [ -n "$DMSG" ]; then
-   t update -f $FUSER.png "Hey, $TUSER $DMSG"
+   t update -f $FUSER.png "Hey, $TUSER -> $DMSG"
 fi
 
 # Delete File
